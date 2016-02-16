@@ -10,29 +10,30 @@ import (
 type Amide struct {
 	Number      int
 	ResName     string
-	ResNumber   int
+	ResNumber   string // residue number may contain insertion code ex. 101A
 	NumContacts int
 	NumO        int
 	NumN        int
 	DoHB        bool
 	// used internally
 	PDBNumber int
-	Coord     [3]float64
+	XYZ       [3]float64
 }
 
 type Atom struct {
 	PDBNumber int
-	AtomName  string
+	Name      string
 	ResName   string
-	ResNumber int
-	Coord     [3]float64
-	AtomType  string
+	ResNumber string // residue number may contain insertion code ex. 101A
+	Chain     string
+	XYZ       [3]float64
+	Type      string
 }
 
 func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
-	// var p Protein
 	var amides []Amide
 	var atoms []Atom
+
 	if pdbfile == "" {
 		return nil, nil, errors.New("You have to enter a valid PDB file name")
 	}
@@ -48,81 +49,44 @@ func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 	var (
 		line    []byte
 		strLine string
-
-		chain     string
-		curNumber int
-		resNumber int
-		icode     string
-		curIcode  string
-		nres      int
 	)
 
-	nres = 1
+	countAmides := 0
 	for {
 		line, _, err = data.ReadLine()
 		if err != nil {
 			break
 		}
 
-		if string(line[:4]) == "ATOM" {
+		// TODO need check if lipids are HETATM
+		if string(line[:6]) == "ATOM  " || string(line[:6]) == "HETATM" {
 			strLine = string(line)
+			var atm Atom
 
-			fmt.Sscanf(strLine[22:26], "%d", &resNumber)
-			fmt.Sscanf(strLine[26:27], "%s", &icode)
-			if resNumber != curNumber || chain != strLine[21:22] || icode != curIcode {
+			fmt.Sscanf(strLine[6:11], "%d", &atm.PDBNumber)
+			fmt.Sscanf(strLine[12:16], "%s", &atm.Name)
+			fmt.Sscanf(strLine[17:20], "%d", &atm.ResName)
+			fmt.Sscanf(strLine[21:22], "%d", &atm.Chain)
+			fmt.Sscanf(strLine[22:27], "%d", &atm.ResNumber)
 
-				curNumber = resNumber
-				curIcode = icode
+			fmt.Sscanf(strLine[30:38], "%f", &atm.XYZ[0])
+			fmt.Sscanf(strLine[38:46], "%f", &atm.XYZ[1])
+			fmt.Sscanf(strLine[46:54], "%f", &atm.XYZ[2])
+			fmt.Sscanf(strLine[76:78], "%s", &atm.Type)
 
-				if chain != strLine[21:22] {
-					chain = strLine[21:22]
-					p.Chains = append(p.Chains, chain)
-				}
+			atoms = append(atoms, atm)
 
-				var r Residue
-				r.N = nres
-				r.Npdb = resNumber
-				r.ICode = icode
-				r.Chain = chain
-
-				fmt.Sscanf(strLine[17:20], "%s", &r.Code)
-
-				var a Atom
-				fmt.Sscanf(strLine[6:11], "%d", &a.N)
-				fmt.Sscanf(strLine[12:16], "%s", &a.Name)
-				fmt.Sscanf(strLine[76:78], "%s", &a.Type)
-				fmt.Sscanf(strLine[30:38], "%f", &a.XYZ[0])
-				fmt.Sscanf(strLine[38:46], "%f", &a.XYZ[1])
-				fmt.Sscanf(strLine[46:54], "%f", &a.XYZ[2])
-				fmt.Sscanf(strLine[54:60], "%f", &a.Occ)
-				fmt.Sscanf(strLine[60:66], "%f", &a.Bfactor)
-				fmt.Sscanf(strLine[16:17], "%s", &a.AltLoc)
-				if len(strLine) > 79 {
-					fmt.Sscanf(strLine[78:80], "%f", &a.Charge)
-				}
-
-				// r.Atoms = append(r.Atoms, a)
-				// p.Residues = append(p.Residues, r)
-				nres += 1
-			} else {
-				var a Atom
-				fmt.Sscanf(strLine[6:11], "%d", &a.N)
-				fmt.Sscanf(strLine[12:16], "%s", &a.Name)
-				fmt.Sscanf(strLine[76:78], "%s", &a.Type)
-				fmt.Sscanf(strLine[30:38], "%f", &a.XYZ[0])
-				fmt.Sscanf(strLine[38:46], "%f", &a.XYZ[1])
-				fmt.Sscanf(strLine[46:54], "%f", &a.XYZ[2])
-				fmt.Sscanf(strLine[54:60], "%f", &a.Occ)
-				fmt.Sscanf(strLine[60:66], "%f", &a.Bfactor)
-				fmt.Sscanf(strLine[16:17], "%s", &a.AltLoc)
-				if len(strLine) > 79 {
-					fmt.Sscanf(strLine[78:80], "%f", &a.Charge)
-				}
-
-				// p.Residues[len(p.Residues)-1].Atoms = append(p.Residues[len(p.Residues)-1].Atoms, a)
+			if atm.Name == "N" {
+				countAmides++
+				var amd Amide
+				amd.Number = countAmides
+				amd.PDBNumber = atm.PDBNumber
+				amd.ResName = atm.ResName
+				amd.ResNumber = atm.ResNumber
+				amd.XYZ = atm.XYZ
+				amides = append(amides, amd)
 			}
 		}
 	}
-	// return &p, nil
 	return amides, atoms, nil
 }

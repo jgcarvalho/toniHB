@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+
+	"github.com/jgcarvalho/toniHB/pdb"
+)
+
 type Amide struct {
 	Number      int
 	ResName     string
@@ -29,6 +35,12 @@ func isHB() {
 
 func main() {
 	// parse parameters
-
+	amd, atm, err := pdb.LoadFile("./test/lysozime/em.pdb")
 	// calculate
+	fmt.Println("ATOMS")
+	fmt.Println(atm)
+	fmt.Println("AMIDES")
+	fmt.Println(amd)
+
+	fmt.Println(err)
 }
