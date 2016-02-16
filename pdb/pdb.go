@@ -12,8 +12,8 @@ type Amide struct {
 	ResName     string
 	ResNumber   string // residue number may contain insertion code ex. 101A
 	NumContacts int
-	NumO        int
-	NumN        int
+	NumOhb      int
+	NumNhb      int
 	DoHB        bool
 	// used internally
 	PDBNumber int
