@@ -65,9 +65,9 @@ func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 
 			fmt.Sscanf(strLine[6:11], "%d", &atm.PDBNumber)
 			fmt.Sscanf(strLine[12:16], "%s", &atm.Name)
-			fmt.Sscanf(strLine[17:20], "%d", &atm.ResName)
-			fmt.Sscanf(strLine[21:22], "%d", &atm.Chain)
-			fmt.Sscanf(strLine[22:27], "%d", &atm.ResNumber)
+			fmt.Sscanf(strLine[17:20], "%s", &atm.ResName)
+			fmt.Sscanf(strLine[21:22], "%s", &atm.Chain)
+			fmt.Sscanf(strLine[22:27], "%s", &atm.ResNumber)
 
 			fmt.Sscanf(strLine[30:38], "%f", &atm.XYZ[0])
 			fmt.Sscanf(strLine[38:46], "%f", &atm.XYZ[1])
