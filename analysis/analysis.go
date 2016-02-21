@@ -15,8 +15,9 @@ func distance(amd [3]float64, atm [3]float64) float64 {
 }
 
 // TODO should contact consider valid atom types?
+// Contacts are calculated with H atom (from NH) as sphere center
 func inContact(amd pdb.Amide, atm pdb.Atom, dist float64) bool {
-	return distance(amd.XYZ, atm.XYZ) < dist
+	return distance(amd.Hxyz, atm.XYZ) < dist
 }
 
 // TODO

@@ -17,7 +17,8 @@ type Amide struct {
 	DoHB        bool
 	// used internally
 	PDBNumber int
-	XYZ       [3]float64
+	Nxyz      [3]float64
+	Hxyz      [3]float64
 }
 
 type Atom struct {
@@ -31,6 +32,7 @@ type Atom struct {
 }
 
 func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
+	var amidesTmp []Amide
 	var amides []Amide
 	var atoms []Atom
 
@@ -76,16 +78,36 @@ func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 
 			atoms = append(atoms, atm)
 
-			if atm.Name == "N" {
+			// get N atom from protein backbone
+			if string(line[:6]) == "ATOM  " && atm.Name == "N" {
 				countAmides++
 				var amd Amide
 				amd.Number = countAmides
 				amd.PDBNumber = atm.PDBNumber
 				amd.ResName = atm.ResName
 				amd.ResNumber = atm.ResNumber
-				amd.XYZ = atm.XYZ
-				amides = append(amides, amd)
+				amd.Nxyz = atm.XYZ
+				amidesTmp = append(amidesTmp, amd)
 			}
+
+			// get H atom from amides protein backbone
+			if string(line[:6]) == "ATOM  " && atm.Name == "H" {
+				// check if H atom is from the same residue that last amide add
+				// WARNING: this can be invalid if H atom is before N atom in the PDB file
+				// but gromacs apparently put the N before H
+				if amidesTmp[len(amidesTmp)-1].ResNumber == atm.ResNumber {
+					amidesTmp[len(amidesTmp)-1].Hxyz = atm.XYZ
+				}
+			}
+		}
+	}
+
+	// check for NH3+ from N-terminal
+	// NH3+ won't have H (they have H1, H2 and H3)
+	// so N-terminal residues are EXCLUDED from analysis (Do they need be included?)
+	for _, x := range amidesTmp {
+		if x.Hxyz != [3]float64{0.0, 0.0, 0.0} {
+			amides = append(amides, x)
 		}
 	}
 	return amides, atoms, nil
