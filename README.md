@@ -28,7 +28,7 @@ Contacts are atoms inside a sphere centered at N backbone atom.
 
 HB distance is calculated between H and acceptor.
 
-HB angle is calculated as PI minus the angle between vector H->N and vector H->acceptor. So, when the vectors are aligned N-H---O the angle is ZERO.    
+HB angle is calculated as Pi minus the angle between vector H->N and vector H->acceptor. So, when the atoms are aligned N-H---O the angle is ZERO.    
 
 ## Notes
 
