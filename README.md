@@ -15,6 +15,9 @@ Parameters:
 - -o: Output file
 
 Examples:
+
 `toniHB -dir ./pdbfiles/ -radius 3.6 -dist 2.8 -angle 1.0 -type COHPN -o output.csv`
+
 or
+
 `toniHB -dir ./pdbfiles/ -radius 3.6 -dist 2.8 -angle 1.0 -type "C O H P N" -o output.csv`
