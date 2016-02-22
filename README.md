@@ -21,3 +21,24 @@ Examples:
 or
 
 `toniHB -dir ./pdbfiles/ -radius 3.6 -dist 2.8 -angle 1.0 -type "C O H P N" -o output.csv`
+
+## Notes
+
+- PDB files in the PBD path must have the extension .pdb
+- The PDB files are sorted alphabetically so you should use
+```
+ protein_001.pdb
+ protein_002.pdb
+ ...
+ protein_999.pdb
+ ```
+ and not
+ ```
+  ~~protein_1.pdb~~
+  ~~protein_2.pdb~~
+  ...
+  ~~protein_9.pdb~~
+  ~~protein_10.pdb~~
+  ...
+  ~~protein_999.pdb~~
+  ```
