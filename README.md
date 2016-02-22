@@ -22,9 +22,17 @@ or
 
 `toniHB -dir ./pdbfiles/ -radius 3.6 -dist 2.8 -angle 1.0 -type "C O H P N" -o output.csv`
 
+## Specifications
+
+Contacts are atoms inside a sphere centered at N backbone atom.
+
+HB distance is calculated between H and acceptor.
+
+HB angle is calculated as PI minus the angle between vector H->N and vector H->acceptor. So, when the vectors are aligned N-H---O the angle is ZERO.    
+
 ## Notes
 
-- PDB files in the PBD path must have the extension .pdb
+- PDB files in the PBD path **must** have the extension **.pdb**
 - The PDB files are sorted alphabetically so you should use
 ```
  protein_001.pdb
