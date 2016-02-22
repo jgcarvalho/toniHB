@@ -32,13 +32,13 @@ or
  ...
  protein_999.pdb
  ```
- and not
+ and **NOT**
  ```
-  ~~protein_1.pdb~~
-  ~~protein_2.pdb~~
+  protein_1.pdb
+  protein_2.pdb
   ...
-  ~~protein_9.pdb~~
-  ~~protein_10.pdb~~
+  protein_9.pdb
+  protein_10.pdb
   ...
-  ~~protein_999.pdb~~
+  protein_999.pdb
   ```
