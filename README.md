@@ -50,3 +50,4 @@ HB angle is calculated as Pi minus the angle between vector H->N and vector H->a
   ...
   protein_999.pdb
   ```
+- Usually, in a PDB file, the N atom of a amino acid is before the H atom, but this is not a PDB format rule. However, this program will fail if H is before N atom.  
