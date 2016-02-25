@@ -20,13 +20,14 @@ func Analyse(dir, validAtoms string, radius, dist, angle float64, output string)
 		return
 	}
 
-	pdbFiles, err := filepath.Glob(absDir + "/*")
+	pdbFiles, err := filepath.Glob(absDir + "/*.pdb")
 	if err != nil {
 		log.Println("ERROR:", err)
 		return
 	}
 	if len(pdbFiles) == 0 {
 		log.Println("ERROR: PDB files not found in path", absDir)
+		return
 	}
 	fmt.Printf("%d PDB files founded at %s\n", len(pdbFiles), absDir)
 

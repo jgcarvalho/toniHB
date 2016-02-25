@@ -31,6 +31,17 @@ type Atom struct {
 	Type      string
 }
 
+func setAtomType(atmName string) string {
+	var atmType string
+	if atmName[0:1] <= "9" {
+		atmType = atmName[1:2]
+	} else {
+		atmType = atmName[0:1]
+	}
+	fmt.Printf("Atom -%s- -%s-\n", atmName, atmType)
+	return atmType
+}
+
 func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 	var amidesTmp []Amide
 	var amides []Amide
@@ -75,6 +86,13 @@ func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 			fmt.Sscanf(strLine[38:46], "%f", &atm.XYZ[1])
 			fmt.Sscanf(strLine[46:54], "%f", &atm.XYZ[2])
 			fmt.Sscanf(strLine[76:78], "%s", &atm.Type)
+
+			fmt.Printf("Atom type -%s-\n", atm.Type)
+			if atm.Type == "" {
+				// setAtomType(atm.Name)
+				atm.Type = setAtomType(atm.Name)
+				// fmt.Println("Typo do atomo ")
+			}
 
 			atoms = append(atoms, atm)
 

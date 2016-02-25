@@ -83,7 +83,7 @@ func Run(amd []pdb.Amide, atm []pdb.Atom, validAtoms string, maxDist float64, hb
 	for i := 0; i < len(amd); i++ {
 		for j := 0; j < len(atm); j++ {
 			// skip if atomtype is not valid (user input)
-			if strings.Contains(validAtoms, atm[j].Type) {
+			if atm[j].Type != "" && strings.Contains(validAtoms, atm[j].Type) {
 				// skip if is the same atom
 				if amd[i].PDBNumber != atm[j].PDBNumber {
 					if inContact(amd[i], atm[j], maxDist) {
