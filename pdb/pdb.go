@@ -38,7 +38,7 @@ func setAtomType(atmName string) string {
 	} else {
 		atmType = atmName[0:1]
 	}
-	fmt.Printf("Atom -%s- -%s-\n", atmName, atmType)
+	// fmt.Printf("Atom -%s- -%s-\n", atmName, atmType)
 	return atmType
 }
 
@@ -87,7 +87,7 @@ func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 			fmt.Sscanf(strLine[46:54], "%f", &atm.XYZ[2])
 			fmt.Sscanf(strLine[76:78], "%s", &atm.Type)
 
-			fmt.Printf("Atom type -%s-\n", atm.Type)
+			// fmt.Printf("Atom type -%s-\n", atm.Type)
 			if atm.Type == "" {
 				// setAtomType(atm.Name)
 				atm.Type = setAtomType(atm.Name)
@@ -109,7 +109,8 @@ func LoadFile(pdbfile string) ([]Amide, []Atom, error) {
 			}
 
 			// get H atom from amides protein backbone
-			if string(line[:6]) == "ATOM  " && atm.Name == "H" {
+			// some force fields use HN instead H
+			if string(line[:6]) == "ATOM  " && (atm.Name == "H" || atm.Name == "HN") {
 				// check if H atom is from the same residue that last amide add
 				// WARNING: this can be invalid if H atom is before N atom in the PDB file
 				// but gromacs apparently put the N before H

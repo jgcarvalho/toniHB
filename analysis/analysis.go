@@ -30,6 +30,9 @@ func isAcceptor(atm pdb.Atom) bool {
 		} else {
 			return false
 		}
+		// nucleic acid acceptors
+	case "O6", "N3", "N7", "O1P", "O2P", "O2'", "O3'", "O4'", "O5'", "N1", "O2", "O4":
+		return true
 	default:
 		return false
 	}
