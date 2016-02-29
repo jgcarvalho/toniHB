@@ -52,9 +52,13 @@ func doHB(amd pdb.Amide, atm pdb.Atom, dist float64, angle float64) bool {
 	if isAcceptor(atm) {
 		// test if distance H to acceptor is between 1.5 and dist (user defined)
 		if distance(amd.Hxyz, atm.XYZ) > 1.5 && distance(amd.Hxyz, atm.XYZ) < dist {
+			// fmt.Printf("%s %s %s %s %s %f %f ", amd.ResName, amd.ResNumber, atm.ResName, atm.ResNumber, atm.Name, distance(amd.Hxyz, atm.XYZ), hbangle(amd.Nxyz, amd.Hxyz, atm.XYZ))
 			// test if angle is smaller than angle (user defined)
 			if hbangle(amd.Nxyz, amd.Hxyz, atm.XYZ) < angle {
+				// fmt.Printf("true\n")
 				return true
+				// } else {
+				// 	fmt.Printf("false\n")
 			}
 		}
 	}

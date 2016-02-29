@@ -1,0 +1,86 @@
+Finding intermodel H-bonds
+Finding intramodel H-bonds
+Using precise constraint criteria
+Models used:
+	#0 em.pdb
+
+H-bonds (donor, acceptor, hydrogen, D..A dist, D-H..A dist):
+LYS 1 N      THR 40 OG1   LYS 1 H3      2.843  1.841	// NH3+ not used
+LYS 1 NZ     GLU 7 OE2    LYS 1 HZ1     2.582  1.570	// side chain not used
+PHE 3 N      PHE 38 O     PHE 3 H       2.900  1.887	// CHECK
+GLY 4 N      GLU 7 OE1    GLY 4 H       3.110  2.105	// CHECK
+ARG 5 NH1    TRP 123 O    ARG 5 1HH1    2.804  1.795	// side chain not used
+ARG 5 NH1    ARG 125 O    ARG 5 2HH1    2.734  1.728	// side chain not used
+LEU 8 N      GLY 4 O      LEU 8 H       2.943  1.947	// CHECK
+ALA 9 N      ARG 5 O      ALA 9 H       3.060  2.085	// CHECK
+ALA 10 N     CYS 6 O      ALA 10 H      3.150  2.193	// fail angle > 0.36 (> 20 degrees)
+ALA 11 N     GLU 7 O      ALA 11 H      3.061  2.145	// fail angle > 0.36 (> 20 degrees)
+MET 12 N     LEU 8 O      MET 12 H      2.824  1.823	// CHECK
+LYS 13 N     ALA 9 O      LYS 13 H      2.964  2.039	// fail angle > 0.36 (> 20 degrees)
+ARG 14 N     ALA 10 O     ARG 14 H      3.127  2.145	// CHECK
+GLY 16 N     LYS 13 O     GLY 16 H      3.054  2.097	// fail angle > 0.36 (> 20 degrees)
+LEU 17 N     MET 12 O     LEU 17 H      3.103  2.105	// CHECK
+TYR 20 N     LEU 17 O     TYR 20 H      2.924  1.926	// CHECK
+GLY 22 N     ASN 19 O     GLY 22 H      2.824  1.870	// fail angle > 0.36 (> 20 degrees)
+LEU 25 N     ASP 18 OD1   LEU 25 H      2.868  1.867	// CHECK
+ASN 27 N     SER 24 O     ASN 27 H      2.972  2.044	// fail angle > 0.36 (> 20 degrees)
+VAL 29 N     LEU 25 O     VAL 29 H      3.131  2.147	// CHECK
+CYS 30 N     GLY 26 O     CYS 30 H      2.875  1.901	// fail angle > 0.36 (> 20 degrees)
+ALA 31 N     ASN 27 O     ALA 31 H      2.873  1.886	// CHECK
+ALA 32 N     TRP 28 O     ALA 32 H      3.019  2.024	// CHECK
+LYS 33 NZ    ASN 37 OD1   LYS 33 HZ2    2.636  1.646	// side chain not used
+PHE 34 N     CYS 30 O     PHE 34 H      3.103  2.122	// CHECK
+GLU 35 N     ALA 31 O     GLU 35 H      2.901  1.971	// fail angle > 0.36 (> 20 degrees)
+SER 36 OG    ILE 55 O     SER 36 HG     2.748  1.859	// side chain not used
+THR 40 N     LYS 1 O      THR 40 H      2.775  1.766	// CHECK
+GLN 41 N     ASN 39 OD1   GLN 41 H      3.134  2.176	// fail angle > 0.36 (> 20 degrees)
+GLN 41 NE2   LEU 84 O     GLN 41 1HE2   3.092  2.122	// side chain not used
+ASN 46 N     SER 50 O     ASN 46 H      2.876  1.873	// CHECK
+ASN 46 ND2   ASP 52 OD2   ASN 46 2HD2   2.839  1.820	// side chain not used
+SER 50 OG    ASP 48 OD1   SER 50 HG     2.594  1.621	// side chain not used
+THR 51 N     SER 60 OG    THR 51 H      2.850  1.861	// CHECK
+ASP 52 N     ASN 44 O     ASP 52 H      2.782  1.785	// CHECK
+TYR 53 N     ILE 58 O     TYR 53 H      2.857  1.848	// CHECK
+TYR 53 OH    ASP 66 OD2   TYR 53 HH     2.716  1.754	// side chain not used
+GLY 54 N     ALA 42 O     GLY 54 H      2.766  1.770	// CHECK
+GLN 57 N     GLY 54 O     GLN 57 H      3.035  2.063	// CHECK
+GLN 57 NE2   GLY 54 O     GLN 57 1HE2   2.812  1.796	// side chain not used
+ILE 58 N     TYR 53 O     ILE 58 H      3.046  2.077	// CHECK
+ASN 59 ND2   ASP 52 OD1   ASN 59 1HD2   2.777  1.753	// side chain not used
+SER 60 N     THR 51 O     SER 60 H      3.005  2.038	// fail angle > 0.36 (> 20 degrees)
+ARG 61 N     ASN 59 OD1   ARG 61 H      2.952  1.992	// fail angle > 0.36 (> 20 degrees)
+ARG 61 NH1   ASP 48 OD2   ARG 61 1HH1   2.638  1.625	// side chain not used
+TRP 63 N     ASN 59 O     TRP 63 H      3.147  2.186	// fail angle > 0.36 (> 20 degrees)
+ASN 65 N     ILE 78 O     ASN 65 H      2.797  1.791	// CHECK
+ARG 68 N     ASP 66 OD1   ARG 68 H      3.090  2.107	// CHECK
+THR 69 OG1   ASP 66 OD1   THR 69 HG1    2.844  1.880	// side chain not used
+LEU 75 N     TRP 62 O     LEU 75 H      2.910  1.898	// CHECK
+CYS 76 N     TRP 63 O     CYS 76 H      2.831  1.892	// fail angle > 0.36 (> 20 degrees)
+ASN 77 N     ASN 74 O     ASN 77 H      2.826  1.922	// fail angle > 0.36 (> 20 degrees)
+ILE 78 N     ASN 74 OD1   ILE 78 H      2.972  1.986	// CHECK
+CYS 80 N     ASN 65 O     CYS 80 H      2.711  1.711	// CHECK
+LEU 84 N     SER 81 O     LEU 84 H      2.937  1.951	// CHECK
+VAL 92 N     ILE 88 O     VAL 92 H      2.868  1.910	// fail angle > 0.36 (> 20 degrees)
+ASN 93 N     THR 89 O     ASN 93 H      2.820  1.823	// CHECK
+CYS 94 N     ALA 90 O     CYS 94 H      2.993  2.010	// CHECK
+ALA 95 N     SER 91 O     ALA 95 H      2.932  1.959	// CHECK
+LYS 96 N     VAL 92 O     LYS 96 H      2.959  2.000	// fail angle > 0.36 (> 20 degrees)
+LYS 96 NZ    HIS 15 O     LYS 96 HZ1    2.639  1.697	// side chain not used
+LYS 97 N     CYS 94 O     LYS 97 H      2.880  1.965	// fail angle > 0.36 (> 20 degrees)
+ILE 98 N     CYS 94 O     ILE 98 H      3.063  2.074	// CHECK
+VAL 99 N     ALA 95 O     VAL 99 H      3.041  2.032	// CHECK
+SER 100 OG   LYS 96 O     SER 100 HG    2.889  2.021	// side chain not used
+ASP 101 N    ILE 98 O     ASP 101 H     3.178  2.221	// fail angle > 0.36 (> 20 degrees)
+ASN 106 N    ASN 103 O    ASN 106 H     3.092  2.150	// fail angle > 0.36 (> 20 degrees)
+ASN 106 ND2  ASN 103 OD1  ASN 106 1HD2  2.856  1.905	// side chain not used
+TRP 108 N    MET 105 O    TRP 108 H     3.117  2.121	// CHECK
+ALA 110 N    GLU 35 OE2   ALA 110 H     2.846  1.871	// fail angle > 0.36 (> 20 degrees)
+TRP 111 NE1  ASN 27 OD1   TRP 111 HE1   2.935  1.990	// side chain not used
+ARG 112 N    TRP 108 O    ARG 112 H     3.187  2.207	// CHECK
+ARG 112 NH1  ASN 106 O    ARG 112 1HH1  2.658  1.635	// side chain not used
+ASN 113 N    VAL 109 O    ASN 113 H     3.012  2.027	// CHECK
+CYS 115 N    TRP 111 O    CYS 115 H     2.920  2.021	// fail angle > 0.36 (> 20 degrees)
+LYS 116 N    TRP 111 O    LYS 116 H     2.917  2.017	// fail angle > 0.36 (> 20 degrees)
+ALA 122 N    ASP 119 O    ALA 122 H     3.069  2.074	// CHECK
+ILE 124 N    GLN 121 O    ILE 124 H     3.118  2.170	// fail angle > 0.36 (> 20 degrees)
+ARG 125 NH2  ASP 119 OD2  ARG 125 2HH2  2.555  1.538	// side chain not used

@@ -1,0 +1,10 @@
+>ListConAtom 462, Element S, cutoff=6.5, exclude=1
+
+Contact Analysis
+================
+
+Atom  462  N   CYS   30   - Atom  176  SD  MET   12  , distance is 6.43 A
+Atom  462  N   CYS   30   - Atom  469  SG  CYS   30  , distance is 4.10 A
+Atom  462  N   CYS   30   - Atom 1732  SG  CYS  115  , distance is 4.98 A
+3 contacts listed.
+

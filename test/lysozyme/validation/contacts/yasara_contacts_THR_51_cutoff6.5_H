@@ -1,0 +1,60 @@
+>ListConAtom 759, Element H, cutoff=6.5, exclude=1
+
+Contact Analysis
+================
+
+Atom  759  N   THR   51   - Atom  664  H   ASN   44  , distance is 6.02 A
+Atom  759  N   THR   51   - Atom  680  HA  ARG   45  , distance is 3.87 A
+Atom  759  N   THR   51   - Atom  682  HB  ARG   45  , distance is 5.91 A
+Atom  759  N   THR   51   - Atom  686  HG  ARG   45  , distance is 6.28 A
+Atom  759  N   THR   51   - Atom  688  HD  ARG   45  , distance is 5.27 A
+Atom  759  N   THR   51   - Atom  689  HD  ARG   45  , distance is 4.07 A
+Atom  759  N   THR   51   - Atom  691  HE  ARG   45  , distance is 5.55 A
+Atom  759  N   THR   51   - Atom  702  H   ASN   46  , distance is 3.91 A
+Atom  759  N   THR   51   - Atom  706  HB  ASN   46  , distance is 4.66 A
+Atom  759  N   THR   51   - Atom  707  HB  ASN   46  , distance is 6.21 A
+Atom  759  N   THR   51   - Atom  711  HD2 ASN   46  , distance is 5.90 A
+Atom  759  N   THR   51   - Atom  742  H   GLY   49  , distance is 6.01 A
+Atom  759  N   THR   51   - Atom  744  HA  GLY   49  , distance is 5.97 A
+Atom  759  N   THR   51   - Atom  745  HA  GLY   49  , distance is 6.35 A
+Atom  759  N   THR   51   - Atom  749  H   SER   50  , distance is 4.27 A
+Atom  759  N   THR   51   - Atom  751  HA  SER   50  , distance is 2.56 A
+Atom  759  N   THR   51   - Atom  753  HB  SER   50  , distance is 3.03 A
+Atom  759  N   THR   51   - Atom  754  HB  SER   50  , distance is 4.16 A
+Atom  759  N   THR   51   - Atom  756  HG  SER   50  , distance is 4.43 A
+Atom  759  N   THR   51   - Atom  760  H   THR   51  , distance is 1.02 A
+Atom  759  N   THR   51   - Atom  762  HA  THR   51  , distance is 2.07 A
+Atom  759  N   THR   51   - Atom  764  HB  THR   51  , distance is 2.65 A
+Atom  759  N   THR   51   - Atom  766  HG1 THR   51  , distance is 2.75 A
+Atom  759  N   THR   51   - Atom  768  HG2 THR   51  , distance is 4.64 A
+Atom  759  N   THR   51   - Atom  769  HG2 THR   51  , distance is 4.17 A
+Atom  759  N   THR   51   - Atom  770  HG2 THR   51  , distance is 4.23 A
+Atom  759  N   THR   51   - Atom  774  H   ASP   52  , distance is 3.71 A
+Atom  759  N   THR   51   - Atom  776  HA  ASP   52  , distance is 4.87 A
+Atom  759  N   THR   51   - Atom  778  HB  ASP   52  , distance is 5.99 A
+Atom  759  N   THR   51   - Atom  786  H   TYR   53  , distance is 6.38 A
+Atom  759  N   THR   51   - Atom  796  HD2 TYR   53  , distance is 5.06 A
+Atom  759  N   THR   51   - Atom  800  HE2 TYR   53  , distance is 3.81 A
+Atom  759  N   THR   51   - Atom  803  HH  TYR   53  , distance is 4.69 A
+Atom  759  N   THR   51   - Atom  890  HA  ASN   59  , distance is 4.82 A
+Atom  759  N   THR   51   - Atom  897  HD2 ASN   59  , distance is 3.93 A
+Atom  759  N   THR   51   - Atom  898  HD2 ASN   59  , distance is 4.60 A
+Atom  759  N   THR   51   - Atom  902  H   SER   60  , distance is 3.65 A
+Atom  759  N   THR   51   - Atom  904  HA  SER   60  , distance is 5.89 A
+Atom  759  N   THR   51   - Atom  906  HB  SER   60  , distance is 4.85 A
+Atom  759  N   THR   51   - Atom  907  HB  SER   60  , distance is 4.32 A
+Atom  759  N   THR   51   - Atom  909  HG  SER   60  , distance is 2.93 A
+Atom  759  N   THR   51   - Atom  913  H   ARG   61  , distance is 5.25 A
+Atom  759  N   THR   51   - Atom  917  HB  ARG   61  , distance is 5.93 A
+Atom  759  N   THR   51   - Atom 1014  HB  ASP   66  , distance is 6.31 A
+Atom  759  N   THR   51   - Atom 1036  HG  ARG   68  , distance is 6.20 A
+Atom  759  N   THR   51   - Atom 1041  HE  ARG   68  , distance is 5.94 A
+Atom  759  N   THR   51   - Atom 1047  HH2 ARG   68  , distance is 6.45 A
+Atom  759  N   THR   51   - Atom 1054  HA  THR   69  , distance is 6.09 A
+Atom  759  N   THR   51   - Atom 1056  HB  THR   69  , distance is 6.18 A
+Atom  759  N   THR   51   - Atom 1058  HG1 THR   69  , distance is 4.81 A
+Atom  759  N   THR   51   - Atom 1060  HG2 THR   69  , distance is 4.89 A
+Atom  759  N   THR   51   - Atom 1061  HG2 THR   69  , distance is 6.45 A
+Atom  759  N   THR   51   - Atom 1062  HG2 THR   69  , distance is 5.16 A
+53 contacts listed.
+

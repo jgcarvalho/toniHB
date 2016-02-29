@@ -1,0 +1,4 @@
+toniHB -dir ../ -radius 6.5 -angle 0.36 -dist 2.8 -type CONHPS -o output.csv
+toniHB -dir ../ -radius 6.5 -angle 0.36 -dist 2.8 -type CON -o output_CON.csv
+toniHB -dir ../ -radius 6.5 -angle 0.36 -dist 2.8 -type H -o output_H.csv
+toniHB -dir ../ -radius 6.5 -angle 0.36 -dist 2.8 -type S -o output_S.csv
