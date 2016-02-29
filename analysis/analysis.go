@@ -9,51 +9,58 @@ import (
 
 // THIS FUNCTION IS IMPORTANT
 // ACCEPTORS MUST BE DEFINED HERE
+
 func isAcceptor(atm pdb.Atom) bool {
-	switch atm.Name {
-	// CHARMM27 and OPLS/AA protein HB acceptors
-	case "O", "OD1", "OD2", "OE1", "OE2", "OG1", "OH":
-		// ASPP and GLUP are protonated so they don't have acceptors
-		if atm.ResName == "ASPP" || atm.ResName == "GLUP" {
-			return false
+	for i := 0; i < len(Acceptors); i++ {
+		if Acceptors[i].ResName == atm.ResName && Acceptors[i].AtmName == atm.Name {
+			return true
 		}
-		return true
-	case "ND1", "NE2":
-		// HSD, HSE and HSP are used to indicate which atom is protonated
-		if atm.ResName == "HSD" && atm.Name == "NE2" {
-			return true
-		} else if atm.ResName == "HSE" && atm.Name == "ND1" {
-			return true
-		} else if atm.ResName == "HSP" {
-			return false
-			// HIS don't indicate which atom is protonated
-		} else if atm.ResName == "HIS" {
-			return true
-		} else {
-			return false
-		}
-		// nucleic acid acceptors
-	case "O6", "N3", "N7", "O1P", "O2P", "O2'", "O3'", "O4'", "O5'", "N1", "O2", "O4":
-		if atm.ResName == "DA" || atm.ResName == "DC" || atm.ResName == "DG" || atm.ResName == "DT" || atm.ResName == "A" || atm.ResName == "C" || atm.ResName == "G" || atm.ResName == "T" {
-			return true
-			// Palmitate has a O2 atom acceptor
-		} else if atm.ResName == "PALM" && atm.Name == "O2" {
-			return true
-		} else {
-			return false
-		}
-		// lipids
-	case "OS1", "OS2", "OS3", "OS4", "OH2":
-		return true
-	case "O1":
-		if atm.ResName == "PALM" {
-			return true
-		} else {
-			return false
-		}
-	default:
-		return false
 	}
+	return false
+	// switch atm.Name {
+	// // CHARMM27 and OPLS/AA protein HB acceptors
+	// case "O", "OD1", "OD2", "OE1", "OE2", "OG1", "OH":
+	// 	// ASPP and GLUP are protonated so they don't have acceptors
+	// 	if atm.ResName == "ASPP" || atm.ResName == "GLUP" {
+	// 		return false
+	// 	}
+	// 	return true
+	// case "ND1", "NE2":
+	// 	// HSD, HSE and HSP are used to indicate which atom is protonated
+	// 	if atm.ResName == "HSD" && atm.Name == "NE2" {
+	// 		return true
+	// 	} else if atm.ResName == "HSE" && atm.Name == "ND1" {
+	// 		return true
+	// 	} else if atm.ResName == "HSP" {
+	// 		return false
+	// 		// HIS don't indicate which atom is protonated
+	// 	} else if atm.ResName == "HIS" {
+	// 		return true
+	// 	} else {
+	// 		return false
+	// 	}
+	// 	// nucleic acid acceptors
+	// case "O6", "N3", "N7", "O1P", "O2P", "O2'", "O3'", "O4'", "O5'", "N1", "O2", "O4":
+	// 	if atm.ResName == "DA" || atm.ResName == "DC" || atm.ResName == "DG" || atm.ResName == "DT" || atm.ResName == "A" || atm.ResName == "C" || atm.ResName == "G" || atm.ResName == "T" {
+	// 		return true
+	// 		// Palmitate has a O2 atom acceptor
+	// 	} else if atm.ResName == "PALM" && atm.Name == "O2" {
+	// 		return true
+	// 	} else {
+	// 		return false
+	// 	}
+	// 	// lipids
+	// case "OS1", "OS2", "OS3", "OS4", "OH2":
+	// 	return true
+	// case "O1":
+	// 	if atm.ResName == "PALM" {
+	// 		return true
+	// 	} else {
+	// 		return false
+	// 	}
+	// default:
+	// 	return false
+	// }
 }
 
 func hbangle(Namd [3]float64, Hamd [3]float64, atm [3]float64) float64 {

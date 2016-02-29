@@ -1,5 +1,5 @@
 Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
-2, "GLU 330", 19, 0, 0, false
+2, "GLU 330", 19, 1, 0, true
 3, "SER 331", 19, 0, 0, false
 4, "VAL 332", 26, 0, 0, false
 6, "VAL 334", 27, 1, 0, true
@@ -30,7 +30,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 31, "SER 359", 22, 1, 0, true
 32, "LEU 360", 23, 0, 0, false
 33, "GLU 361", 23, 0, 0, false
-34, "ASP 362", 26, 0, 0, false
+34, "ASP 362", 26, 1, 0, true
 35, "ILE 363", 27, 1, 0, true
 36, "ARG 364", 24, 1, 0, true
 37, "SER 365", 23, 1, 0, true
@@ -79,10 +79,10 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 81, "GLY 409", 21, 0, 0, false
 82, "LEU 410", 25, 1, 0, true
 83, "LEU 411", 19, 1, 0, true
-84, "CYS 412", 18, 0, 0, false
+84, "CYS 412", 17, 0, 0, false
 85, "VAL 413", 19, 1, 0, true
 86, "ALA 414", 21, 0, 0, false
-87, "CYS 415", 21, 0, 0, false
+87, "CYS 415", 20, 0, 0, false
 88, "GLY 416", 20, 1, 0, true
 89, "SER 417", 19, 0, 0, false
 90, "TYR 418", 22, 0, 0, false
@@ -92,7 +92,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 94, "LYS 422", 21, 1, 0, true
 95, "ALA 423", 18, 0, 0, false
 96, "THR 424", 22, 0, 0, false
-97, "CYS 425", 21, 1, 0, true
+97, "CYS 425", 20, 1, 0, true
 98, "GLY 426", 21, 0, 0, false
 99, "ASP 427", 21, 0, 0, false
 100, "VAL 428", 18, 1, 0, true
@@ -143,7 +143,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 146, "LEU 474", 25, 1, 0, true
 147, "GLY 475", 20, 1, 0, true
 148, "VAL 476", 19, 1, 0, true
-149, "CYS 477", 20, 1, 0, true
+149, "CYS 477", 19, 1, 0, true
 150, "ARG 478", 16, 1, 0, true
 151, "LEU 479", 21, 0, 0, false
 153, "GLY 481", 12, 0, 0, false
@@ -164,7 +164,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 170, "GLU 498", 25, 1, 0, true
 171, "PHE 499", 21, 1, 0, true
 172, "ALA 500", 22, 0, 0, false
-173, "CYS 501", 25, 0, 0, false
+173, "CYS 501", 24, 0, 0, false
 174, "ALA 502", 26, 1, 0, true
 175, "LEU 503", 25, 1, 0, true
 176, "LEU 504", 23, 1, 0, true
@@ -175,7 +175,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 181, "SER 509", 21, 1, 0, true
 182, "ALA 510", 20, 0, 0, false
 183, "HIS 511", 21, 0, 0, false
-184, "PHE 512", 25, 0, 0, false
+184, "PHE 512", 25, 1, 0, true
 185, "ASN 513", 27, 1, 0, true
 186, "ARG 514", 23, 1, 0, true
 187, "SER 515", 23, 2, 0, true
@@ -193,8 +193,8 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 199, "LEU 527", 16, 0, 0, false
 200, "SER 528", 20, 1, 0, true
 201, "GLU 529", 22, 1, 0, true
-202, "HIS 530", 25, 0, 0, false
-203, "ALA 531", 20, 0, 0, false
+202, "HIS 530", 25, 1, 0, true
+203, "ALA 531", 20, 1, 0, true
 204, "LEU 532", 17, 0, 0, false
 205, "SER 533", 21, 1, 0, true
 206, "THR 534", 20, 1, 0, true
@@ -206,7 +206,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 212, "THR 540", 19, 0, 0, false
 213, "HIS 541", 26, 0, 0, false
 214, "GLY 542", 21, 1, 0, true
-215, "CYS 543", 21, 1, 0, true
+215, "CYS 543", 20, 1, 0, true
 216, "LYS 544", 18, 0, 0, false
 217, "VAL 545", 26, 1, 0, true
 218, "GLY 546", 20, 1, 0, true
@@ -262,7 +262,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 274, "SER 359", 21, 0, 0, false
 275, "LEU 360", 23, 0, 0, false
 276, "GLU 361", 22, 0, 0, false
-277, "ASP 362", 24, 0, 0, false
+277, "ASP 362", 24, 1, 0, true
 278, "ILE 363", 26, 1, 0, true
 279, "ARG 364", 23, 1, 0, true
 280, "SER 365", 25, 2, 0, true
@@ -311,10 +311,10 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 324, "GLY 409", 19, 1, 0, true
 325, "LEU 410", 24, 1, 0, true
 326, "LEU 411", 17, 1, 0, true
-327, "CYS 412", 20, 0, 0, false
+327, "CYS 412", 19, 0, 0, false
 328, "VAL 413", 19, 1, 0, true
 329, "ALA 414", 22, 1, 0, true
-330, "CYS 415", 19, 1, 0, true
+330, "CYS 415", 18, 1, 0, true
 331, "GLY 416", 20, 1, 0, true
 332, "SER 417", 18, 0, 0, false
 333, "TYR 418", 23, 1, 0, true
@@ -324,7 +324,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 337, "LYS 422", 23, 1, 0, true
 338, "ALA 423", 17, 0, 0, false
 339, "THR 424", 22, 0, 0, false
-340, "CYS 425", 20, 1, 0, true
+340, "CYS 425", 19, 1, 0, true
 341, "GLY 426", 23, 0, 0, false
 342, "ASP 427", 18, 0, 0, false
 343, "VAL 428", 21, 1, 0, true
@@ -375,8 +375,8 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 389, "LEU 474", 23, 1, 0, true
 390, "GLY 475", 15, 1, 0, true
 391, "VAL 476", 18, 1, 0, true
-392, "CYS 477", 19, 1, 0, true
-393, "ARG 478", 17, 1, 0, true
+392, "CYS 477", 18, 1, 0, true
+393, "ARG 478", 16, 1, 0, true
 394, "LEU 479", 22, 0, 0, false
 396, "GLY 481", 12, 0, 0, false
 398, "GLY 483", 14, 0, 0, false
@@ -396,7 +396,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 413, "GLU 498", 25, 1, 0, true
 414, "PHE 499", 21, 1, 0, true
 415, "ALA 500", 22, 0, 0, false
-416, "CYS 501", 23, 0, 0, false
+416, "CYS 501", 22, 0, 0, false
 417, "ALA 502", 26, 1, 0, true
 418, "LEU 503", 25, 1, 0, true
 419, "LEU 504", 24, 1, 0, true
@@ -407,7 +407,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 424, "SER 509", 21, 1, 0, true
 425, "ALA 510", 19, 0, 0, false
 426, "HIS 511", 23, 0, 0, false
-427, "PHE 512", 22, 0, 0, false
+427, "PHE 512", 22, 1, 0, true
 428, "ASN 513", 26, 1, 0, true
 429, "ARG 514", 27, 1, 0, true
 430, "SER 515", 24, 1, 0, true
@@ -425,8 +425,8 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 442, "LEU 527", 17, 0, 0, false
 443, "SER 528", 19, 1, 0, true
 444, "GLU 529", 21, 1, 0, true
-445, "HIS 530", 25, 0, 0, false
-446, "ALA 531", 20, 0, 0, false
+445, "HIS 530", 25, 1, 0, true
+446, "ALA 531", 20, 1, 0, true
 447, "LEU 532", 17, 0, 0, false
 448, "SER 533", 21, 1, 0, true
 449, "THR 534", 21, 1, 0, true
@@ -438,7 +438,7 @@ Number, Residue, Contacts_test.pdb, O_test.pdb, N_test.pdb, H-bond_test.pdb
 455, "THR 540", 19, 0, 0, false
 456, "HIS 541", 22, 0, 0, false
 457, "GLY 542", 19, 1, 0, true
-458, "CYS 543", 20, 1, 0, true
+458, "CYS 543", 19, 1, 0, true
 459, "LYS 544", 21, 0, 0, false
 460, "VAL 545", 23, 1, 0, true
 461, "GLY 546", 16, 0, 0, false
