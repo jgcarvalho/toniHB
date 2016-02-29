@@ -38,12 +38,12 @@ func Analyse(dir, validAtoms string, radius, dist, angle float64, output string)
 		analysis.Run(allPDBamides[i], allPDBatoms[i], validAtoms, radius, dist, angle)
 	}
 	// write result to file
-	Report(allPDBamides, output)
+	Report(pdbFiles, allPDBamides, output)
 	fmt.Println("DONE")
 }
 
 // Write result to output file
-func Report(allPDBamides [][]pdb.Amide, output string) {
+func Report(pdbfiles []string, allPDBamides [][]pdb.Amide, output string) {
 	f, err := os.Create(output)
 	if err != nil {
 		log.Println("ERROR:", err)
@@ -56,7 +56,8 @@ func Report(allPDBamides [][]pdb.Amide, output string) {
 	// print header
 	fmt.Fprint(f, "Number, Residue")
 	for i := 0; i < nPDB; i++ {
-		fmt.Fprintf(f, ", Contacts_%d, O_%d, N_%d, H-bond_%d", i+1, i+1, i+1, i+1)
+		fn := filepath.Base(pdbfiles[i])
+		fmt.Fprintf(f, ", Contacts_%s, O_%s, N_%s, H-bond_%s", fn, fn, fn, fn)
 	}
 	fmt.Fprint(f, "\n")
 	// print data

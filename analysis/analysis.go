@@ -7,6 +7,8 @@ import (
 	"github.com/jgcarvalho/toniHB/pdb"
 )
 
+// THIS FUNCTION IS IMPORTANT
+// ACCEPTORS MUST BE DEFINED HERE
 func isAcceptor(atm pdb.Atom) bool {
 	switch atm.Name {
 	// CHARMM27 and OPLS/AA protein HB acceptors
@@ -32,7 +34,23 @@ func isAcceptor(atm pdb.Atom) bool {
 		}
 		// nucleic acid acceptors
 	case "O6", "N3", "N7", "O1P", "O2P", "O2'", "O3'", "O4'", "O5'", "N1", "O2", "O4":
+		if atm.ResName == "DA" || atm.ResName == "DC" || atm.ResName == "DG" || atm.ResName == "DT" || atm.ResName == "A" || atm.ResName == "C" || atm.ResName == "G" || atm.ResName == "T" {
+			return true
+			// Palmitate has a O2 atom acceptor
+		} else if atm.ResName == "PALM" && atm.Name == "O2" {
+			return true
+		} else {
+			return false
+		}
+		// lipids
+	case "OS1", "OS2", "OS3", "OS4", "OH2":
 		return true
+	case "O1":
+		if atm.ResName == "PALM" {
+			return true
+		} else {
+			return false
+		}
 	default:
 		return false
 	}
@@ -85,25 +103,27 @@ func doHB(amd pdb.Amide, atm pdb.Atom, dist float64, angle float64) bool {
 func Run(amd []pdb.Amide, atm []pdb.Atom, validAtoms string, maxDist float64, hbDist float64, hbAngle float64) {
 	for i := 0; i < len(amd); i++ {
 		for j := 0; j < len(atm); j++ {
-			// skip if atomtype is not valid (user input)
-			if atm[j].Type != "" && strings.Contains(validAtoms, atm[j].Type) {
-				// skip if is the same atom
-				if amd[i].PDBNumber != atm[j].PDBNumber {
+
+			// skip if is the same atom
+			if amd[i].PDBNumber != atm[j].PDBNumber {
+				// skip if atomtype is not valid (user input)
+				if atm[j].Type != "" && strings.Contains(validAtoms, atm[j].Type) {
 					if inContact(amd[i], atm[j], maxDist) {
 						amd[i].NumContacts++
 					}
-					if atm[j].Type == "O" {
-						if doHB(amd[i], atm[j], hbDist, hbAngle) {
-							amd[i].NumOhb++
-						}
+				}
+				if atm[j].Type == "O" {
+					if doHB(amd[i], atm[j], hbDist, hbAngle) {
+						amd[i].NumOhb++
 					}
-					if atm[j].Type == "N" {
-						if doHB(amd[i], atm[j], hbDist, hbAngle) {
-							amd[i].NumNhb++
-						}
+				}
+				if atm[j].Type == "N" {
+					if doHB(amd[i], atm[j], hbDist, hbAngle) {
+						amd[i].NumNhb++
 					}
 				}
 			}
+
 		}
 		if amd[i].NumOhb > 0 || amd[i].NumNhb > 0 {
 			amd[i].DoHB = true
